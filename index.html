@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="logo.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ICONOS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- JAVASCRIPT -->
+    <script src="main.js" defer></script>
+    <!-- GRAFICOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
+</head>
+<body>
+    <!-- MENU DASHBOARD -->
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="logo">
+                <img class="logo-img" src="logo.png" alt="logo">
+                <span>Dashboard</span>
+            </div>
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+
+        <!-- MENU -->
+        <div class="menu">
+            <!-- AGRUPADORES -->
+            <h2>Seleccionar Agrupador: <i class='bx bx-plus' onclick="resetElement()" id="agregarAgrupadores"></i></h2>
+            <div class="agrupadores">
+                <div class="enlace agrupador" id="agrupador1" >               
+                    <span>Agrupador 1</span> <i class='bx bx-x btnCloseAgrupadores' id="btnClose btnCloseAgrupador1" ></i>
+                </div>
+    
+                <div class="enlace agrupador" id="agrupador2">
+                    <span>Agrupador 2</span> <i class='bx bx-x btnCloseAgrupadores' id="btnCloseAgrupador2" ></i>
+                </div>
+    
+                <div class="enlace agrupador" id="agrupador3">
+                    <span>Agrupador 3</span> <i class='bx bx-x btnCloseAgrupadores' id="btnCloseAgrupador3" ></i>
+                </div>
+    
+                <div class="enlace agrupador" id="agrupador4">
+                    <span>Agrupador 4</span> <i class='bx bx-x btnCloseAgrupadores' id="btnCloseAgrupador4" ></i>
+                </div>
+    
+                <div class="enlace agrupador" id="agrupador5">
+                    <span>Agrupador 5</span> <i class='bx bx-x btnCloseAgrupadores' id="btnCloseAgrupador5" ></i>
+                </div>
+            </div>
+            
+            <!-- SUBGRUPOS -->
+            <h2>Seleccionar Subgrupo: <i class='bx bx-plus' onclick="resetElement2()" id="agregarSubgrupos"></i></h2>
+            <div class="subgrupos">
+                <div class="enlace subgrupo" id="subgrupo1">             
+                    <span>Subgrupo 1 de agrupador 1</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo2">
+                    <span>Subgrupo 2 de agrupador 1</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo3">
+                    <span>Subgrupo 3 de agrupador 1</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo4">
+                    <span>Subgrupo 1 de agrupador 2</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo5">
+                    <span>Subgrupo 2 de agrupador 2</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo6">
+                    <span>Subgrupo 3 de agrupador 2</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo7">
+                    <span>Subgrupo 1 de agrupador 3</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo8">
+                    <span>Subgrupo 2 de agrupador 3</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo9">
+                    <span>Subgrupo 3 de agrupador 3</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo10">
+                    <span>Subgrupo 1 de agrupador 4</span> <i class='bx bx-x btnCloseSubgrupos'></i> 
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo11">
+                    <span>Subgrupo 2 de agrupador 4</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo12">
+                    <span>Subgrupo 3 de agrupador 4</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+
+                <div class="enlace subgrupo" id="subgrupo13">
+                    <span>Subgrupo 1 de agrupador 5</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo14">
+                    <span>Subgrupo 2 de agrupador 5</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+    
+                <div class="enlace subgrupo" id="subgrupo15">
+                    <span>Subgrupo 3 de agrupador 5</span> <i class='bx bx-x btnCloseSubgrupos'></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- TITULO -->
+    <div class="titulo">
+        <h2>Dashboard de Mensajeria</h2>
+    </div>
+
+    <!-- DATOS -->
+    <div class="datos">
+        <div class="dato">
+            <p>Informados</p>
+            <span id="informados"></span>
+        </div>
+        
+        <div class="dato">
+            <p>WhatsApp</p>
+            <span id="whatsapp"></span>
+        </div>
+        
+        <div class="dato">
+            <p>Mails</p>
+            <span id="mails"></span>
+        </div>
+        
+        <div class="dato">
+            <p>SMS</p>
+            <span id="sms"></span>
+        </div>
+        
+        <div class="dato">
+            <p>Monto</p>
+            <span id="monto"></span>
+        </div>
+    </div>
+    
+    <!-- GRAFICOS -->
+    <canvas id="myChart" width="700px" height="600px"></canvas>
+    <canvas id="myChart2" width="700px" height="480px"></canvas>
+</body>
+</html>

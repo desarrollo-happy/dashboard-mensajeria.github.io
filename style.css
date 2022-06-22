@@ -1,0 +1,355 @@
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* VARIABLES */
+
+:root {
+    --blanco: #E0E0E0;
+    --azul-opacidad: #184463;
+    --bg-menu: #003053;
+    --bg-body: #C7E1FF;
+}
+
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--blanco);
+    /*display: flex;*/
+    /*max-height: 100vh;*/
+    overflow-x: hidden;
+
+}
+
+/* MENU DASHBOARD */
+.menu-dashboard {
+    max-width: 170px;
+    height: 100vh;
+    background: var(--bg-menu);
+    padding: 20px;
+    transition: max-width .3s ease;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 22px;
+    margin-left: 20px;
+    display: none;
+    font-weight: bold;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+}
+
+/* ENLACES MENU */
+.menu h2{
+    opacity: 0;
+    transition: opacity .3s ease; 
+    display: none; 
+    font-size: 22px;
+}
+
+.menu .enlace{
+    width: 100%;
+    padding: 8px 0 8px 10px;
+    border-radius: 8px;
+    display: none;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 17px;
+    transition: all .3s ease;
+    justify-content: space-between;
+}
+
+
+.menu .enlace span {
+    opacity: 0;
+    transition: opacity .3s ease;   
+}
+.menu .enlace i {
+    opacity: 0;
+    transition: opacity .3s ease;   
+}
+
+.menu-dashboard.open {
+    max-width: 300px;
+    display: inline-block;
+    background: var(--bg-menu);
+}
+
+.menu-dashboard.open .enlace:hover {
+    background: var(--azul-opacidad);
+    cursor: pointer;
+}
+
+.menu-dashboard.open .top-menu .logo span {
+    display: block;
+}
+
+.menu-dashboard.open .menu .subgrupos{
+    max-height: 450px;
+    overflow-y: scroll;
+}
+
+.menu-dashboard.open .menu .enlace {
+    width: auto;
+    display: flex;
+}
+
+.menu-dashboard.open .menu h2{
+    font-size: 20px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-dashboard.open .menu h2 i{
+    cursor: pointer;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.menu-dashboard.open .menu h2 i:hover {
+    background: var(--azul-opacidad);
+    
+}
+
+.menu-dashboard.open .menu .enlace {
+    padding: 13px;
+}
+
+.menu-dashboard.open .menu .enlace span {
+    opacity: 1;
+}
+
+.menu-dashboard.open .menu .enlace i {
+    opacity: 1;
+}
+
+/* TITULO */
+.titulo{
+    font-size: 35px;
+    padding: 15px;
+    color: #000;
+    position: absolute;
+    left: 300px;
+    top: 0;
+}
+
+/* DATOS */
+.datos{
+    height: 200px;
+    width: 100vw;
+    display: inline-flex;
+    top: 170px;
+    position: absolute;
+    left: 300px;
+    top: 150px;
+    
+}
+
+.datos .dato{
+    height: 150px;
+    width: 200px;
+    background-color: #184463;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.datos .dato:not(:first-child){
+    margin: 20px 60px;
+}
+
+.datos .dato:hover {
+    background-color: #003053;
+}
+
+.datos .dato p{
+    font-size: 20px;
+    height: 25px;
+    padding-left: 8px;
+}
+
+.datos .dato span{
+    display: block;
+    width: 100%;
+    height: 125px;
+    font-size: 40px; 
+    text-align: center;
+    padding: 35px;
+}
+
+/* GRAFICOS */
+#myChart{
+    position: absolute;
+    left: 310px;
+    top: 340px;
+    
+}
+
+#myChart2{
+    position: absolute;
+    left: 1050px;
+    top: 340px;
+    
+}
+
+.disNone{
+    display: none;
+}
+
+/* RESPONSIVE MOBILE GRANDE*/
+@media screen and (max-width:420px){
+    .menu-dashboard{
+        position: absolute;
+        height: 115vh;
+        z-index: 10;
+        left: -170px;
+        transition: left .3s ease;
+    }
+
+    .bx-menu:before {
+        position: relative;
+        color:#000;
+        left: 115px;
+    }
+
+    .menu-dashboard.open{
+        left: 0;
+    }
+    
+
+    /* TITULO */
+    .titulo{
+        left: 70px;
+        
+    }
+
+    .titulo h2{
+        font-size: 40px;
+    }
+
+    /* DATOS */
+    .datos{
+        display: flex;
+        left: 70px;
+        top: 130px;
+        flex-direction: column;
+        width: auto;
+        
+    }
+
+    .datos .dato{
+        height: 110px;
+        
+    }
+
+    .datos .dato:first-child,.datos .dato:not(:first-child){
+        margin: 15px;
+    }
+
+    .datos .dato span{
+        padding: 15px;
+        font-size: 30px;
+    }
+
+    /* GRAFICOS */
+    #myChart{
+        top: 850px;
+        left: 0;
+        overflow-x: scroll !important;
+    }
+
+    #myChart2{
+        top: 1475px;
+        left: 0;
+        overflow-x: scroll !important;
+    }
+}
+
+/* RESPONSIVE MOBILE PEQUEÑO*/
+@media screen and (max-width:395px){
+    .bx-menu:before {
+        position: relative;
+        color:#000;
+        left: 110px;
+    }
+
+    .menu-dashboard.open .menu .subgrupos{
+        max-height: 250px;
+    }
+
+    /* TITULO */
+    .titulo{
+        left: 75px;
+        
+    }
+
+    .titulo h2{
+        font-size: 40px;
+    }
+
+    /* DATOS */
+    .datos{
+        left: 75px;
+        top: 180px;
+    }
+
+    /* GRAFICOS */
+    #myChart{
+        top: 895px;
+        width: 600px;
+        height: 500px;
+        
+    }
+
+    #myChart2{
+        top: 1535px;
+        width: 600px;
+        height: 380px;
+        
+    }
+}
+
+
+
+
+
+
+
+
